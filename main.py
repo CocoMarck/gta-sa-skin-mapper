@@ -2,6 +2,7 @@ import random
 import shutil
 from utils import ResourceLoader
 from core.text_util import read_text, ignore_comment
+from pathlib import Path
 
 
 # Rutas
@@ -32,19 +33,22 @@ def get_skins_of_textfile():
     return skins
 
 
-def get_dict_input_skins():
-    '''
-    Obtener nombres de skins, solo archivos que tengan `.dff` y `txt`, lamados de la misma manera.
-    '''
-    dict_input_dir = resource_loader.get_recursive_tree( INPUT_DIR )
 
+
+
+def get_dict_of_correct_skins_in_dir( path ):
+    '''
+    Obtener diccionario con archivos en un directorio, con deterinasin si es skin o no.
+
+    Obtener nombres de skins, solo archivos que tengan `.dff` y `txt`, llamados de la misma manera.
+    '''
     # Preparar diccionario para validacion de skins
+    dict_path = resource_loader.get_recursive_tree( path )
     dict_correct_skins = {}
-    for skin_file in dict_input_dir['file']:
+    for skin_file in dict_path['file']:
         name = skin_file.name
         skin_model_name = name[:-4]
-        if skin_model_name in dict_input_dir.keys():
-            continue
+
         dict_correct_skins.update({
             skin_model_name: {
                 "is_a_skin": False,
@@ -53,8 +57,8 @@ def get_dict_input_skins():
             }
         })
 
-    # Agregando skin
-    for skin_file in dict_input_dir['file']:
+    # Paso dos, determinar que sea skin
+    for skin_file in dict_path['file']:
         # Si el nombre tiene como ultimas cuatro letras ".dff" o ".txd", esta bien.
         name = skin_file.name
         skin_model_name = name[:-4]
@@ -72,9 +76,32 @@ def get_dict_input_skins():
             (not dict_correct_skins[skin_model_name]["filetxd"] == None)
         )
 
-
     return dict_correct_skins
 
+
+def get_dict_input_skins():
+    return get_dict_of_correct_skins_in_dir( INPUT_DIR )
+
+
+def get_dict_output_skins():
+    return get_dict_of_correct_skins_in_dir( OUTPUT_DIR )
+
+
+def get_name_of_correct_skins( dict_correct_skins ):
+    name_of_skins = []
+    for name in dict_correct_skins.keys():
+        dict_skin = dict_correct_skins[name]
+        if dict_skin["is_a_skin"]:
+            name_of_skins.append( name )
+    return name_of_skins
+
+
+def get_output_skin_model_names( ):
+    return get_name_of_correct_skins( get_dict_output_skins() )
+
+
+def get_input_skin_model_names( dict_input_skins={} ):
+    return get_name_of_correct_skins( get_dict_input_skins() )
 
 
 def input_to_output_skins( dict_input_skins={}, mode="normal" ):
@@ -88,11 +115,7 @@ def input_to_output_skins( dict_input_skins={}, mode="normal" ):
     - random_counted
     '''
     # Obtener skins listos para usar
-    name_of_input_skins = []
-    for name in dict_input_skins.keys():
-        dict_skin = dict_input_skins[name]
-        if dict_skin["is_a_skin"]:
-            name_of_input_skins.append( name )
+    name_of_input_skins = get_input_skin_model_names( dict_input_skins=dict_input_skins )
     number_of_input_skins = len( name_of_input_skins )-1
 
     # Modo de guardado
@@ -121,10 +144,65 @@ def input_to_output_skins( dict_input_skins={}, mode="normal" ):
 
 
 
-# Rutas de skins en input
-skin_model_names = get_skins_of_textfile()
-dict_input_skins = get_dict_input_skins()
+def clean_folder_dff_txd(folder: Path):
+    for item in folder.rglob("*"):
+        if item.is_file() and item.suffix.lower() in (".dff", ".txd"):
+            item.unlink()
 
-# Debug
-#print(skin_model_names)
-input_to_output_skins( dict_input_skins )
+
+def clean_output():
+    good_remove = False
+    try:
+        clean_folder_dff_txd( OUTPUT_DIR )
+        good_remove = True
+    finally:
+        return good_remove
+
+
+
+
+# Argparse moment
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    '-m', '--mode', help='Set copy mode of input to output'
+)
+parser.add_argument(
+    '-c', '--clean', action="store_true", help='Clean output'
+)
+parser.add_argument(
+    '-si', '--show-input', action="store_true", help="Get input model names"
+)
+parser.add_argument(
+    '-so', '--show-output', action="store_true", help="Get output model names"
+)
+parser.add_argument(
+    '-do', '--desired-output', action="store_true", help="Get the output of the desired model names"
+)
+parser.add_argument(
+    '-r', '--run', action="store_true", help="Copy input skins to output dir"
+)
+
+args = parser.parse_args()
+
+# Chamba
+## Mostrar input o output
+if args.show_input:
+    print( f"Input models: {get_input_skin_model_names()}" )
+if args.show_output:
+    print( f"Output models: {get_output_skin_model_names()}" )
+if args.desired_output:
+    print( f"Desired output models: {get_skins_of_textfile()}" )
+
+## Limpiar output, o copair input a output
+if args.clean:
+    if clean_output():
+        print( "Cleaned" )
+if args.run:
+    # A copiar archivos
+    dict_input_skins = get_dict_input_skins()
+    input_to_output_skins( dict_input_skins, mode=str(args.mode) )
+
+
