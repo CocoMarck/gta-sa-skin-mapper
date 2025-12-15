@@ -191,7 +191,7 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument(
-    '-m', '--mode', help='Set copy mode of input to output'
+    '-m', '--mode', help='Set copy mode of input to output. Modes: "normal", "random_counted", "random"'
 )
 parser.add_argument(
     '-c', '--clean', action="store_true", help='Clean output'

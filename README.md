@@ -6,3 +6,8 @@ Ejemplo de uso:
 gta-3d-mapper --mode "normal" --run
 ```
 
+Compilar con `pyinstaller` (Jala en muchos OS, probado en Win y Linux):
+```bash
+pyinstaller --onefile main.py
+```
+
