@@ -18,7 +18,7 @@ MODEL_EXTENSION = ".dff"
 
 
 # Funciones
-def get_skins_of_textfile():
+def get_model_names_of_textfile():
     # Leer texto
     normal_text = read_text( MODEL_OUTPUT_NAMES_TEXTFILE, option="ModeText" )
     text_ready = ignore_comment( normal_text, comment="#" )
@@ -36,7 +36,7 @@ def get_skins_of_textfile():
 
 
 
-def get_dict_of_correct_skins_in_dir( path ):
+def get_dict_of_correct_models_in_dir( path ):
     '''
     Obtener diccionario con archivos en un directorio, con deterinasin si es skin o no.
 
@@ -44,71 +44,71 @@ def get_dict_of_correct_skins_in_dir( path ):
     '''
     # Preparar diccionario para validacion de skins
     dict_path = resource_loader.get_recursive_tree( path )
-    dict_correct_skins = {}
-    for skin_file in dict_path['file']:
-        name = skin_file.name
-        skin_model_name = name[:-4]
+    dict_correct_models = {}
+    for model_file in dict_path['file']:
+        name = model_file.name
+        model_name = name[:-4]
 
-        dict_correct_skins.update({
-            skin_model_name: {
-                "is_a_skin": False,
+        dict_correct_models.update({
+            model_name: {
+                "is_a_model": False,
                 "filetxd": None,
                 "filedff": None
             }
         })
 
     # Paso dos, determinar que sea skin
-    for skin_file in dict_path['file']:
+    for model_file in dict_path['file']:
         # Si el nombre tiene como ultimas cuatro letras ".dff" o ".txd", esta bien.
-        name = skin_file.name
-        skin_model_name = name[:-4]
+        name = model_file.name
+        model_name = name[:-4]
         file_extension = name[-4:]
         is_dff = file_extension == MODEL_EXTENSION
         is_txd = file_extension == TEXTURE_EXTENSION
         if is_dff:
-            dict_correct_skins[skin_model_name]["filedff"] = skin_file
+            dict_correct_models[model_name]["filedff"] = model_file
         elif is_txd:
-            dict_correct_skins[skin_model_name]["filetxd"] = skin_file
+            dict_correct_models[model_name]["filetxd"] = model_file
 
         # Validado skin
-        dict_correct_skins[skin_model_name]["is_a_skin"] = (
-            (not dict_correct_skins[skin_model_name]["filedff"] == None) and
-            (not dict_correct_skins[skin_model_name]["filetxd"] == None)
+        dict_correct_models[model_name]["is_a_model"] = (
+            (not dict_correct_models[model_name]["filedff"] == None) and
+            (not dict_correct_models[model_name]["filetxd"] == None)
         )
 
-    return dict_correct_skins
+    return dict_correct_models
 
 
-def get_dict_input_skins():
-    return get_dict_of_correct_skins_in_dir( INPUT_DIR )
+def get_dict_input_models():
+    return get_dict_of_correct_models_in_dir( INPUT_DIR )
 
 
-def get_dict_output_skins():
-    return get_dict_of_correct_skins_in_dir( OUTPUT_DIR )
+def get_dict_output_models():
+    return get_dict_of_correct_models_in_dir( OUTPUT_DIR )
 
 
-def get_name_of_correct_skins( dict_correct_skins ):
-    name_of_skins = []
-    for name in dict_correct_skins.keys():
-        dict_skin = dict_correct_skins[name]
-        if dict_skin["is_a_skin"]:
-            name_of_skins.append( name )
-    return name_of_skins
+def get_name_of_correct_models( dict_correct_models ):
+    name_of_models = []
+    for name in dict_correct_models.keys():
+        dict_model = dict_correct_models[name]
+        if dict_model["is_a_model"]:
+            name_of_models.append( name )
+    return name_of_models
 
 
-def get_output_skin_model_names( ):
-    return get_name_of_correct_skins( get_dict_output_skins() )
+def get_output_model_names( ):
+    return get_name_of_correct_models( get_dict_output_models() )
 
 
-def get_input_skin_model_names( dict_input_skins={} ):
-    return get_name_of_correct_skins( get_dict_input_skins() )
+def get_input_model_names( dict_input_models={} ):
+    return get_name_of_correct_models( get_dict_input_models() )
 
 
 
 DICT_COPY_MODES = {
     "normal": 0, "random_counted": 1, "random": 2
 }
-def input_to_output_skins( dict_input_skins={}, mode="normal" ):
+def input_to_output_models( dict_input_models={}, mode="normal" ):
     '''
     Copiar input skins a output
     > Se supone que output, no importa que se le remplaze todo todote.
@@ -119,51 +119,51 @@ def input_to_output_skins( dict_input_skins={}, mode="normal" ):
     - random_counted
     '''
     # Obtener skins listos para usar
-    name_of_input_skins = get_input_skin_model_names( dict_input_skins=dict_input_skins )
-    number_of_input_skins = len( name_of_input_skins )-1
+    name_of_input_models = get_input_model_names( dict_input_models=dict_input_models )
+    number_of_input_models = len( name_of_input_models )-1
 
     # Modo de guardado
-    skin_model_names = get_skins_of_textfile()
-    if number_of_input_skins >= 0 and (mode in DICT_COPY_MODES.keys()):
+    model_names = get_model_names_of_textfile()
+    if number_of_input_models >= 0 and (mode in DICT_COPY_MODES.keys()):
         mode_number = DICT_COPY_MODES[mode]
         count = 0
-        deletable_name_of_input_skins = list(name_of_input_skins)
+        deletable_name_of_input_models = list(name_of_input_models)
         activate_counter = mode_number != DICT_COPY_MODES["random"]
-        for model_name in skin_model_names:
+        for model_name in model_names:
             # Modo
-            selected_key = name_of_input_skins[count] # 'normal' mode
+            selected_key = name_of_input_models[count] # 'normal' mode
             if mode_number == DICT_COPY_MODES["random"]:
-                selected_key = random.choice( name_of_input_skins )
+                selected_key = random.choice( name_of_input_models )
                 activate_counter = False
             elif mode_number == DICT_COPY_MODES["random_counted"]:
                 # Elegir en lista borrable, de forma aleleatorio, y elimminar de la lista opcion seleccionada.
-                selected_index = random.randint(0, len(deletable_name_of_input_skins)-1 )
-                selected_key = deletable_name_of_input_skins[selected_index]
-                del deletable_name_of_input_skins[selected_index]
+                selected_index = random.randint(0, len(deletable_name_of_input_models)-1 )
+                selected_key = deletable_name_of_input_models[selected_index]
+                del deletable_name_of_input_models[selected_index]
 
             ## Skin seleccionada
-            dict_skin = dict_input_skins[ selected_key ]
+            dict_model = dict_input_models[ selected_key ]
 
             # Files
             output_filedff = OUTPUT_DIR.joinpath( f"{model_name}{MODEL_EXTENSION}" )
             output_filetxd = OUTPUT_DIR.joinpath( f"{model_name}{TEXTURE_EXTENSION}" )
 
             # Copiar
-            shutil.copy( dict_skin[ "filedff"], output_filedff )
-            shutil.copy( dict_skin[ "filetxd"], output_filetxd )
+            shutil.copy( dict_model[ "filedff"], output_filedff )
+            shutil.copy( dict_model[ "filetxd"], output_filetxd )
 
             # Contar
             if activate_counter:
-                if count == number_of_input_skins:
+                if count == number_of_input_models:
                     count = 0
-                    deletable_name_of_input_skins = list(name_of_input_skins)
+                    deletable_name_of_input_models = list(name_of_input_models)
                 else:
                     count += 1
 
             # Debug
             text_prefix = f"Mode `{mode}` | Counter `{count}`"
-            print( f'{text_prefix} | {dict_skin[ "filedff"]} to {output_filedff}' )
-            print( f'{text_prefix} | {dict_skin[ "filetxd"]} to {output_filetxd}' )
+            print( f'{text_prefix} | {dict_model[ "filedff"]} to {output_filedff}' )
+            print( f'{text_prefix} | {dict_model[ "filetxd"]} to {output_filetxd}' )
 
 
 
@@ -214,11 +214,14 @@ args = parser.parse_args()
 # Chamba
 ## Mostrar input o output
 if args.show_input:
-    print( f"Input models: {get_input_skin_model_names()}" )
+    model_names = get_input_model_names()
+    print( f"Input models: {model_names} {len(model_names)}" )
 if args.show_output:
-    print( f"Output models: {get_output_skin_model_names()}" )
+    model_names = get_output_model_names()
+    print( f"Output models: {model_names} {len(model_names)}" )
 if args.desired_output:
-    print( f"Desired output models: {get_skins_of_textfile()}" )
+    model_names = get_model_names_of_textfile()
+    print( f"Desired output models: {model_names} {len(model_names)}" )
 
 ## Limpiar output, o copiar input a output
 if args.clean:
@@ -226,12 +229,12 @@ if args.clean:
         print( "Cleaned" )
 if args.run:
     # A copiar archivos
-    dict_input_skins = get_dict_input_skins()
+    dict_input_models = get_dict_input_models()
 
     if not (args.mode in DICT_COPY_MODES.keys()):
         mode = "normal"
     else:
         mode = args.mode
-    input_to_output_skins( dict_input_skins, mode=mode )
+    input_to_output_models( dict_input_models, mode=mode )
 
 
