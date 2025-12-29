@@ -4,5 +4,7 @@ __pycache__/
 *.txd
 *.log
 *.spec
+*.png
+*.jpg
 *build/
 *dist/

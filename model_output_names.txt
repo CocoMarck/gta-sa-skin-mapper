@@ -144,7 +144,9 @@ cwmofr
 cwmohb1
 cwmohb2
 cwmyfr
+cwmofr
 cwmyhb2
+cwmyhb1
 
 ## men farm town
 dwmolc1
@@ -161,6 +163,13 @@ wmycd1
 bmocd
 vbmocd
 
+# Roller
+wmyjg
+wmyro
+
+# Bodyguard
+wbdyg1
+wbdyg2
 
 ## unique (dj, payaso, bmx, jardinero, mecanico, etc)
 bmydj
@@ -170,10 +179,7 @@ male01
 wmymech
 hmogar
 bmochil
-
-# Roller
-wmyjg
-wmyro
+wmymoun
 
 
 ## other
