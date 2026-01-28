@@ -121,6 +121,7 @@ sbmycr
 bmycr
 hmycr
 shmycr
+swmycr
 
 
 ## men drug
@@ -200,6 +201,7 @@ wmymech
 hmogar
 bmochil
 wmyva
+wmych
 
 
 ## other

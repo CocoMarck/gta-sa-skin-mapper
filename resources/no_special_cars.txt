@@ -1,0 +1,41 @@
+# https://wiki.multitheftauto.com/wiki/Vehicle_IDs
+# http://hotmist.ddo.jp/id/vehicle.html
+# 2-Door & Compact cars
+alpha
+blistac
+bravura
+buccaneer
+cadrona
+club
+euros
+feltzer
+fortune
+hermes
+hustler
+majestic
+manana
+picador
+previon
+stallion
+tampa
+virgo
+
+# 4-Door & Luxury cars
+admiral
+elegant
+emperor
+greenwood
+intruder
+merit
+nebula
+oceanic
+premier
+primo
+santinel
+stafford
+stretch
+sunrise
+tahoma
+vincent
+washington
+willard
