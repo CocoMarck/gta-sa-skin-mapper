@@ -1,0 +1,53 @@
+# NORMAL (Transfender)
+# 2 door and transfender slots
+## Sport vehicles
+alpha
+banshee
+turismo
+sabre
+zr350
+blistac
+bullet
+euros
+club
+phoenix
+buffalo
+infernus
+cheetah
+club
+supertgt
+
+## Saloons
+previon
+hermes
+virgo
+majestic
+buccanee
+fortune
+cadrona
+clover
+tampa
+bravura
+manana
+esperant
+
+## Convertibles
+stallion
+comet
+feltzer
+windsor
+
+## Idustrial
+bobcat
+walton
+picador
+
+## Station Wagons
+
+## Off road
+rancher
+mesa
+
+## Unique vehicles
+romero
+hustler

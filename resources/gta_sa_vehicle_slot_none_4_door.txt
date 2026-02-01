@@ -1,7 +1,27 @@
 # NONE (Sin tuning, pero siguen siendo NORMAL)
-## 4 door
-emperor
-majestic
-regina
-romero
-solair
+# 4 door with none tuning (transfer)
+
+## Industrial
+pony
+rumpo
+topfun
+burrito
+boxville
+boxburg
+
+## Public service
+ambulan
+enforcer
+fbiranch
+copcarla
+copcarsf
+copcarvg
+
+## Saloons
+glenshit
+
+## Off road
+patriot
+
+## Unique vehicles
+sacurica

@@ -1,10 +1,26 @@
-## 2
-python3 main.py -id "./custom-input/2-door-vehicles/" -od "./custom-output/2-door-vehicles/" -tf "./resources/gta_sa_2_door_vehicles.txt" --mode "random-counted" --run
+# 2 doors
+## Transfender
+python3 main.py -id "./custom-input/2-door-vehicles/transfender/gta.img/" -od "./custom-output/2-door-vehicles/transfender" -tf "./resources/gta_sa_vehicle_slot_transfender_2_door.txt" --mode "random-counted" --run
 
-python3 main.py -id "./custom-input/2-door-vehicles/" -od "./custom-output/2-door-vehicles/" -tf "./resources/gta_sa_2_door_vehicles.txt" --clean
+python3 main.py -id "./custom-input/2-door-vehicles/transfender/gta.img/" -od "./custom-output/2-door-vehicles/transfender" -tf "./resources/gta_sa_vehicle_slot_transfender_2_door.txt" --clean
+
+## None
+python3 main.py -id "./custom-input/2-door-vehicles/transfender/gta.img/" -od "./custom-output/2-door-vehicles/none" -tf "./resources/gta_sa_vehicle_slot_none_2_door.txt" --mode "random-counted" --run
+
+python3 main.py -id "./custom-input/2-door-vehicles/transfender/gta.img/" -od "./custom-output/2-door-vehicles/none" -tf "./resources/gta_sa_vehicle_slot_none_2_door.txt" --clean
 
 
-## 4
-python3 main.py -id "./custom-input/4-door-vehicles/" -od "./custom-output/4-door-vehicles/" -tf "./resources/gta_sa_4_door_vehicles.txt" --mode "random-counted" --run
 
-python3 main.py -id "./custom-input/4-door-vehicles/" -od "./custom-output/4-door-vehicles/" -tf "./resources/gta_sa_4_door_vehicles.txt" --clean
+
+----
+
+# 4 doors
+## Transfender
+python3 main.py -id "./custom-input/4-door-vehicles/transfender/gta.img/" -od "./custom-output/4-door-vehicles/transfender" -tf "./resources/gta_sa_vehicle_slot_transfender_4_door.txt" --mode "random-counted" --run
+
+python3 main.py -id "./custom-input/4-door-vehicles/transfender/gta.img/" -od "./custom-output/4-door-vehicles/transfender" -tf "./resources/gta_sa_vehicle_slot_transfender_4_door.txt" --clean
+
+## None
+python3 main.py -id "./custom-input/4-door-vehicles/transfender/gta.img/" -od "./custom-output/4-door-vehicles/none" -tf "./resources/gta_sa_vehicle_slot_none_4_door.txt" --mode "random-counted" --run
+
+python3 main.py -id "./custom-input/4-door-vehicles/transfender/gta.img/" -od "./custom-output/4-door-vehicles/none" -tf "./resources/gta_sa_vehicle_slot_none_4_door.txt" --clean

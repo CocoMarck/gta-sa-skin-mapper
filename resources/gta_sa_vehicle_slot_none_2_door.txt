@@ -1,7 +1,52 @@
 # NONE (Sin tuning, pero siguen siendo NORMAL)
-## 2 door
-hermes
-hustler
-manana
-picador
-previon
+# 2 door
+
+## Sport vehicles
+hotring
+hotrina
+hotrinb
+
+## Saloons
+bloodra
+bloodrb
+
+## Industrial
+packer
+flatbed
+yankee
+benson
+petro
+rdtrain
+cement
+sadler
+yosemite
+dft30
+sadlshit
+linerun
+trash
+mule
+
+## Off road
+monster
+monstera
+monsterb
+sandking
+rnchlure
+duneride
+bfinject
+
+## Public service
+firetruk
+fbitruck
+firela
+copcarru
+swatvan
+barracks
+
+## Unique vehicles
+mrwhoop
+hotknife
+caddy
+journey
+towtruck
+hotdog
