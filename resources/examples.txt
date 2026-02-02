@@ -1,26 +1,47 @@
-# 2 doors
-## Transfender
-python3 main.py -id "./custom-input/2-door-vehicles/transfender/gta.img/" -od "./custom-output/2-door-vehicles/transfender" -tf "./resources/gta_sa_vehicle_slot_transfender_2_door.txt" --mode "random-counted" --run
+# Cars
 
-python3 main.py -id "./custom-input/2-door-vehicles/transfender/gta.img/" -od "./custom-output/2-door-vehicles/transfender" -tf "./resources/gta_sa_vehicle_slot_transfender_2_door.txt" --clean
+## 2 doors
+### Transfender
+```bash
+python3 main.py -id "./custom-input/cars/2-doors/transfender/gta.img/" -od "./custom-output/cars/2-doors/transfender" -tf "./resources/gta_sa_cars_slot_transfender_2_door.txt" --clean --mode "random_counted" --run
+```
 
-## None
-python3 main.py -id "./custom-input/2-door-vehicles/transfender/gta.img/" -od "./custom-output/2-door-vehicles/none" -tf "./resources/gta_sa_vehicle_slot_none_2_door.txt" --mode "random-counted" --run
+### None
+```bash
+python3 main.py -id "./custom-input/cars/2-doors/transfender/gta.img/" -od "./custom-output/cars/2-doors/none" -tf "./resources/gta_sa_cars_slot_none_2_door.txt" --clean --mode "random_counted" --run
+```
 
-python3 main.py -id "./custom-input/2-door-vehicles/transfender/gta.img/" -od "./custom-output/2-door-vehicles/none" -tf "./resources/gta_sa_vehicle_slot_none_2_door.txt" --clean
+### Lowriders <-- Solo usar si los autos son compatibles con locolowco tunning. (normalente no se usara)
+```bash
+python3 main.py -id './custom-input/cars/2-doors/locolowco/gta.img' -od './custom-output/cars/2-doors/locolowco/' -tf "./resources/gta_sa_cars_slot_locolowco_2_door.txt" --clean --mode "random_counted" --run
+```
 
 
 
 
 ----
 
-# 4 doors
-## Transfender
-python3 main.py -id "./custom-input/4-door-vehicles/transfender/gta.img/" -od "./custom-output/4-door-vehicles/transfender" -tf "./resources/gta_sa_vehicle_slot_transfender_4_door.txt" --mode "random-counted" --run
+## 4 doors
+### Transfender
+```bash
+python3 main.py -id "./custom-input/cars/4-doors/transfender/gta.img/" -od "./custom-output/cars/4-doors/transfender" -tf "./resources/gta_sa_cars_slot_transfender_4_door.txt" --clean --mode "random_counted" --run
+```
 
-python3 main.py -id "./custom-input/4-door-vehicles/transfender/gta.img/" -od "./custom-output/4-door-vehicles/transfender" -tf "./resources/gta_sa_vehicle_slot_transfender_4_door.txt" --clean
+### None
+```bash
+python3 main.py -id "./custom-input/cars/4-doors/transfender/gta.img/" -od "./custom-output/cars/4-doors/none" -tf "./resources/gta_sa_cars_slot_none_4_door.txt" --clean --mode "random_counted" --run
+```
 
-## None
-python3 main.py -id "./custom-input/4-door-vehicles/transfender/gta.img/" -od "./custom-output/4-door-vehicles/none" -tf "./resources/gta_sa_vehicle_slot_none_4_door.txt" --mode "random-counted" --run
 
-python3 main.py -id "./custom-input/4-door-vehicles/transfender/gta.img/" -od "./custom-output/4-door-vehicles/none" -tf "./resources/gta_sa_vehicle_slot_none_4_door.txt" --clean
+
+---
+
+# Bikes
+## Motorycycles
+```bash
+python3 main.py -id './custom-input/bikes/motorcycles/gta.img' -od './custom-output/bikes/motorcycles/' -tf "./resources/gta_sa_bikes_motorcycles.txt" --clean --mode "random_counted" --run
+```
+
+```bash
+python3 main.py -id './custom-input/bikes/bicycles/gta.img' -od './custom-output/bikes/bicycles/' -tf "./resources/gta_sa_bikes_bicycles.txt" --clean --mode "random_counted" --run
+```

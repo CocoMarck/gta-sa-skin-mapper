@@ -1,10 +1,9 @@
 # LOWRIDER (Loco Low Co)
+# 2 door
 
-## 2 door
 blade
 broadway
-remington
-savanna
+remingtn
 slamvan
 tornado
 voodoo
