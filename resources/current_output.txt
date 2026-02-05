@@ -1,0 +1,186 @@
+# Current final output:
+
+
+cars none 1 doors output models:
+---
+mower
+rcbandit
+tractor
+baggage
+bandito
+dumper
+rctiger
+kart
+sweeper
+tug
+---
+models: 10
+
+
+cars transfender 2 doors output models:
+---
+banshee
+fortune
+hermes
+sabre
+infernus
+windsor
+comet
+euros
+buffalo
+supergt
+turismo
+hustler
+feltzer
+alpha
+romero
+bullet
+esperant
+---
+models: 17
+
+
+cars none 2 door output models:
+---
+packer
+firetruk
+dft30
+towtruck
+barracks
+bloodrb
+monster
+rdtrain
+sadler
+petro
+flatbed
+benson
+journey
+hotdog
+bfinject
+linerun
+firela
+fbitruck
+bloodra
+caddy
+copcarru
+swatvan
+yankee
+hotknife
+mule
+sadlshit
+sandking
+hotrinb
+yosemite
+mrwhoop
+monsterb
+duneride
+cement
+rnchlure
+monstera
+hotrina
+trash
+hotring
+---
+models: 38
+
+
+cars transfender 4 doors output models:
+---
+stretch
+oceanic
+admiral
+elegant
+solair
+glendale
+huntley
+regina
+cabbie
+---
+models: 9
+
+
+cars transfender 4 doors output models:
+---
+glenshit
+copcarla
+patriot
+boxburg
+boxville
+fbiranch
+rumpo
+pony
+copcarvg
+sacurica
+ambulan
+topfun
+burrito
+copcarsf
+enforcer
+---
+models: 15
+
+
+motorcycles output models:
+---
+pcj600
+wayfarer
+nrg500
+bf400
+copbike
+fcr900
+freeway
+faggio
+pizzaboy
+sanchez
+---
+models: 10
+
+
+bicycles output models:
+---
+mtbike
+bike
+bmx
+---
+models: 3
+
+
+airplanes 1 seat output models:
+---
+nevada
+cropdust
+stunt
+rustler
+---
+models: 4
+
+
+airplanes 2 seat output models:
+---
+beagle
+dodo
+skimmer
+at400
+androm
+---
+models: 5
+
+
+helicopters 2 seat output models:
+---
+leviathn
+raindanc
+vcnmav
+cargobob
+sparrow
+seaspar
+---
+models: 6
+
+
+helicopters 4 seat output models:
+---
+polmav
+maverick
+---
+models: 2

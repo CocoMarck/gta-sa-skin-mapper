@@ -60,14 +60,35 @@ class GTA3DMapperCLI():
         if args.show_input:
             dict_input_models = self.model_service.get_dict_input_models()
             model_names = self.model_service.get_input_model_names( dict_input_models )
-            print( f"input models: {model_names} {len(model_names)}" )
+            list_to_string = '\n'.join( name for name in model_names)
+            print(
+                f"input models:\n"
+                f"---\n"
+                f"{list_to_string}\n"
+                f"---\n"
+                f"models: {len(model_names)}"
+            )
         if args.show_output:
             dict_output_models = self.model_service.get_dict_output_models()
             model_names = self.model_service.get_output_model_names( dict_output_models )
-            print( f"output models: {model_names} {len(model_names)}" )
+            list_to_string = '\n'.join( name for name in model_names)
+            print(
+                f"output models:\n"
+                f"---\n"
+                f"{list_to_string}\n"
+                f"---\n"
+                f"models: {len(model_names)}"
+            )
         if args.desired_output:
             model_names = self.model_service.get_model_names_of_textfile()
-            print( f"desired output models: {model_names} {len(model_names)}" )
+            list_to_string = '\n'.join( name for name in model_names)
+            print(
+                f"desired output models:\n"
+                f"---\n"
+                f"{list_to_string}\n"
+                f"---\n"
+                f"models: {len(model_names)}"
+            )
 
         ## Limpiar output, o copiar input a output
         if args.clean:

@@ -11,6 +11,13 @@ custom-input/ or custom-output/
     bikes/
         motorcycles/
         bicycles/
+    airplanes/
+        1-seat/
+        2-seat/
+    helicopters/
+        1-seat/
+        2-seat/
+        4-seat/
 ```
 
 ---
@@ -86,26 +93,6 @@ python3 main.py -od './custom-output/bikes/bicycles/' -so
 
 
 
-----
-
-# Current final output:
-```
-['banshee', 'fortune', 'hermes', 'sabre', 'infernus', 'windsor', 'comet', 'euros', 'buffalo', 'supergt', 'turismo', 'hustler', 'feltzer', 'alpha', 'romero', 'bullet', 'esperant'] 17
-
-
-['packer', 'firetruk', 'dft30', 'towtruck', 'barracks', 'bloodrb', 'monster', 'rdtrain', 'sadler', 'petro', 'flatbed', 'benson', 'journey', 'hotdog', 'bfinject', 'linerun', 'firela', 'fbitruck', 'bloodra', 'caddy', 'copcarru', 'swatvan', 'yankee', 'hotknife', 'mule', 'sadlshit', 'sandking', 'hotrinb', 'yosemite', 'mrwhoop', 'monsterb', 'duneride', 'cement', 'rnchlure', 'monstera', 'hotrina', 'trash', 'hotring'] 38
-
-['stretch', 'oceanic', 'admiral', 'elegant', 'solair', 'glendale', 'huntley', 'regina', 'cabbie'] 9
-
-['glenshit', 'copcarla', 'patriot', 'boxburg', 'boxville', 'fbiranch', 'rumpo', 'pony', 'copcarvg', 'sacurica', 'ambulan', 'topfun', 'burrito', 'copcarsf', 'enforcer'] 15
-
-['pcj600', 'wayfarer', 'nrg500', 'bf400', 'copbike', 'fcr900', 'freeway', 'faggio', 'pizzaboy', 'sanchez'] 10
-
-['mtbike', 'bike', 'bmx'] 3
-```
-
-
-
 ---
 
 # Airplanes
@@ -134,4 +121,11 @@ python3 main.py -od "./custom-output/airplanes/2-seat" -so
 python3 main.py -id "./custom-input/helicopters/2-seat/gta.img/" -od "./custom-output/helicopters/2-seat/" -tf "./resources/gta_sa_helicopters_2_seats.txt" --clean --mode "random_counted" --run
 
 python3 main.py -od "./custom-output/helicopters/2-seat" -so
+```
+
+## 4 seat
+```bash
+python3 main.py -id "./custom-input/helicopters/4-seat/gta.img/" -od "./custom-output/helicopters/4-seat/" -tf "./resources/gta_sa_helicopters_4_seats.txt" --clean --mode "random_counted" --run
+
+python3 main.py -od "./custom-output/helicopters/4-seat" -so
 ```

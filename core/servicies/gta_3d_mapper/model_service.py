@@ -56,7 +56,7 @@ class ModelService:
                 continue
             else:
                 skins.append( text )
-        return not_repeat_item( skins ) # No repetir skins.
+        return not_repeat_item( sorted(skins) ) # No repetir skins.
 
 
     def get_dict_of_correct_models_in_dir( self, path ):
@@ -109,7 +109,7 @@ class ModelService:
             dict_model = dict_correct_models[name]
             if dict_model.is_a_model:
                 name_of_models.append( name )
-        return name_of_models
+        return sorted(name_of_models)
 
     def get_output_model_names( self, dict_output_models={} ):
         return self.get_name_of_correct_models( dict_output_models )
