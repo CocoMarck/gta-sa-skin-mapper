@@ -31,28 +31,3 @@ bobcat
 ### Off road
 mesa
 rancher
-
-## 4 door
-### Off road
-landstal
-
-### Station wagons
-moonbeam
-peren
-
-### Saloons
-emperor
-stafford
-merit
-sunrise
-primo
-intruder
-willard
-nebula
-greenwoo
-premier
-washing
-sentinel
-
-### Public service
-taxi

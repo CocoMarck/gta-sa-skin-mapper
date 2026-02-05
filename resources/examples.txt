@@ -129,3 +129,13 @@ python3 main.py -id "./custom-input/helicopters/4-seat/gta.img/" -od "./custom-o
 
 python3 main.py -od "./custom-output/helicopters/4-seat" -so
 ```
+
+
+
+---
+## Cars wheel arch angels 2 doors
+```bash
+python3 main.py -id "./custom-input/cars/2-doors/wheel-arch-angels/gta.img/" -od "./custom-output/cars/2-doors/wheel-arch-angels" -tf "./resources/gta_sa_cars_slot_wheel_arch_angels_2_door.txt" --clean --mode "random_counted" --run
+
+python3 main.py -od "./custom-output/cars/2-doors/wheel-arch-angels" -tf "./resources/gta_sa_cars_slot_wheel_arch_angels_2_door.txt" -so
+```

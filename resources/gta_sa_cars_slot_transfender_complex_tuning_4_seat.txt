@@ -1,0 +1,27 @@
+# Cars Transfender. With complex tuning
+# If the cars don't have the correct slots, they crash
+
+## 4 door
+### Off road
+landstal
+
+### Station wagons
+moonbeam
+peren
+
+### Saloons
+emperor
+stafford
+merit
+sunrise
+primo
+intruder
+willard
+nebula
+greenwoo
+premier
+washing
+sentinel
+
+### Public service
+taxi

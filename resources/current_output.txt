@@ -86,36 +86,36 @@ models: 38
 
 cars transfender 4 doors output models:
 ---
-stretch
-oceanic
 admiral
+cabbie
 elegant
-solair
 glendale
 huntley
+oceanic
 regina
-cabbie
+solair
+stretch
 ---
 models: 9
 
 
-cars transfender 4 doors output models:
+cars none 4 doors output models:
 ---
-glenshit
-copcarla
-patriot
+ambulan
 boxburg
 boxville
-fbiranch
-rumpo
-pony
-copcarvg
-sacurica
-ambulan
-topfun
 burrito
+copcarla
 copcarsf
+copcarvg
 enforcer
+fbiranch
+glenshit
+patriot
+pony
+rumpo
+sacurica
+topfun
 ---
 models: 15
 
@@ -184,3 +184,13 @@ polmav
 maverick
 ---
 models: 2
+
+
+cars wheel arch angels 2 doors:
+---
+elegy
+flash
+jester
+uranus
+---
+models: 4
