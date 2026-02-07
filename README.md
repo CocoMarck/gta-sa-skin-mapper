@@ -8,6 +8,6 @@ python main.py --mode "normal" --run
 
 Compilar con `pyinstaller` (Jala en muchos OS, probado en Win y Linux):
 ```bash
-pyinstaller --onefile main.py
+pyinstaller --onefile --console --name "gta_3d_mapper" main.py 
 ```
 

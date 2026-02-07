@@ -23,6 +23,10 @@ custom-input/ or custom-output/
         1-seat/
         2-seat/
         4-seat/
+    peds/
+        normal/ special/
+            men/
+            woman/
 ```
 
 ---

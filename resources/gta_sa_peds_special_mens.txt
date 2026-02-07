@@ -12,6 +12,7 @@ torino
 jizzy
 ogloc
 maddogg
+cesar
 
 # Heckler
 heck1
